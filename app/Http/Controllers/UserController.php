@@ -50,12 +50,16 @@ class UserController extends Controller
      * @param  \App\users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, users $user)
+    public function update(Request $request, User $user)
     {
-        $users->update($request->all());
+        //Actualiza Usuario
+        $user->update($request->all());
 
-        return redirect()->route('users.edit', $users->id)
-            ->with('info','Cargo Actualizado con éxito');
+        //Actualizar Roles
+        $user->roles()->sync($request->get('roles'));
+
+        return redirect()->route('users.edit', $user->id)
+            ->with('info','Usuario Actualizado con éxito');
     }
 
     /**

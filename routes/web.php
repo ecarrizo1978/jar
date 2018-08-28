@@ -38,16 +38,16 @@ Route::middleware(['auth'])->group(function(){
 	Route::get('roles/create' , 'RoleController@create')->name('roles.create')
 	       ->middleware('permission:roles.index');
 	
-	Route::put('roles/{id_rol}' , 'RoleController@update')->name('roles.update')
+	Route::put('roles/{role}' , 'RoleController@update')->name('roles.update')
 	       ->middleware('permission:roles.edit');
 
-	Route::get('roles/{id_rol}' , 'RoleController@show')->name('roles.show')
+	Route::get('roles/{role}' , 'RoleController@show')->name('roles.show')
 	       ->middleware('permission:roles.show');	  
 	
-	Route::delete('roles/{id_rol}' , 'RoleController@destroy')->name('roles.destroy')
+	Route::delete('roles/{role}' , 'RoleController@destroy')->name('roles.destroy')
 	       ->middleware('permission:roles.destroy');
 	
-	Route::get('roles/{id_rol}/edit' , 'RoleController@edit')->name('roles.edit')
+	Route::get('roles/{role}/edit' , 'RoleController@edit')->name('roles.edit')
 	       ->middleware('permission:roles.edit');	       
 
 
