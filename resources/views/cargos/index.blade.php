@@ -14,7 +14,7 @@
 
                 <div class="panel-body">
 
-                    <table>
+                    <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th width="20px" >ID</th>
@@ -27,21 +27,21 @@
                                 <tr>
                                     <td>{{ $c->id }}</td>
                                     <td>{{ $c->nombre }}</td>
-                                    <td>
+                                    <td width="10px">
                                         @can('cargos.show')
                                             <a href="{{ route('cargos.show', $c->id) }}" class="btn btn-sm btn-default">
                                                 Ver
                                             </a>
                                         @endcan
                                     </td>
-                                    <td>
+                                    <td width="10px">
                                         @can('cargos.edit')
                                             <a href="{{ route('cargos.edit', $c->id) }}" class="btn btn-sm btn-default">
                                                 Editar
                                             </a>
                                         @endcan
                                     </td>
-                                    <td>
+                                    <td width="10px">
                                         @can('cargos.destroy')
                                             {!!  Form::open(['route' => ['cargos.destroy', $c->id], 'method' => 'DELETE' ])   !!}
                                                 <button class="btn btn-sm btn-danger">

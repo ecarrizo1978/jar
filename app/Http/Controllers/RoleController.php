@@ -39,8 +39,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        $roles = Role::get();
-        return view('roles.edit', compact('Role','roles'));
+        $permissions = Permission::get();
+        return view('roles.edit', compact('role','permissions'));
     }
 
     /**
@@ -52,14 +52,14 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //Actualiza Usuario
+        //Actualiza Rol
         $role->update($request->all());
 
-        //Actualizar roles
-        $role->roles()->sync($request->get('roles'));
+        //Actualizar Permisos
+        $role->permissions()->sync($request->get('permissions'));
 
         return redirect()->route('roles.edit', $role->id)
-            ->with('info','Usuario Actualizado con éxito');
+            ->with('info','Rol Actualizado con éxito');
     }
 
     /**
@@ -74,4 +74,33 @@ class RoleController extends Controller
 
         return back()->with('info','Eliminado Correctamente');
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $permissions = Permission::get();
+        return view('roles.create',compact('permissions'));   
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $role = Role::create($request->all());
+
+        //Actualizar Permisos
+        $role->permissions()->sync($request->get('permissions'));
+
+        return redirect()->route('roles.edit', $role->id)
+            ->with('info','Cargo Guardado con éxito');
+    }
+
 }

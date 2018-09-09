@@ -14,10 +14,10 @@
 
                 <div class="panel-body">
 
-                    <table>
+                    <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="20px" >ID</th>
+                                <th width="10px" >ID</th>
                                 <th>Nombre</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
@@ -27,21 +27,21 @@
                                 <tr>
                                     <td>{{ $c->id }}</td>
                                     <td>{{ $c->name }}</td>
-                                    <td>
+                                    <td width="10px">
                                         @can('roles.show')
                                             <a href="{{ route('roles.show', $c->id) }}" class="btn btn-sm btn-default">
                                                 Ver
                                             </a>
                                         @endcan
                                     </td>
-                                    <td>
+                                    <td width="10px">
                                         @can('roles.edit')
                                             <a href="{{ route('roles.edit', $c->id) }}" class="btn btn-sm btn-default">
                                                 Editar
                                             </a>
                                         @endcan
                                     </td>
-                                    <td>
+                                    <td width="10px">
                                         @can('roles.destroy')
                                             {!!  Form::open(['route' => ['roles.destroy', $c->id], 'method' => 'DELETE' ])   !!}
                                                 <button class="btn btn-sm btn-danger">

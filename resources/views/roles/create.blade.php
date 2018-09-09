@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Cargo</div>
+                <div class="panel-heading">Role</div>
 
                 <div class="panel-body">
 
-					{!!  Form::open(['route' => 'cargos.store'])   !!}
+					{!!  Form::open(['route' => 'roles.store'])   !!}
                         
-						@include('cargos.partials.form')
+						@include('roles.partials.form')
 
                     {!! Form::close()  !!}
 
