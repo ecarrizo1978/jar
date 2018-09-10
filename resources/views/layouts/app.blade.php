@@ -36,19 +36,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        @can('cargos.index')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
-                        </li>                
-                        @endcan
-                        <li class="nav-item">            
-                            <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('users.index') }}">Usuarios</a>
-                        </li>
-
+                        &nbsp;
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -82,19 +70,6 @@
                 </div>
             </div>
         </nav>
-
-
-        @if(session('info'))
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="alert alert-success">
-                            {{ session('info') }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
 
         @yield('content')
     </div>

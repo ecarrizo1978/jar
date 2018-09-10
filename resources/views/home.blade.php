@@ -1,23 +1,55 @@
-@extends('layouts.app')
+@extends('admin.layout')
+@section('contenido')
 
-@section('content')
-<div class="container">
+<div class="responsive">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+        <div class="col-sm-12">
+            <div class="white-box">
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+                <div class="panel panel-info">
+                    <div class="panel-heading"> Niveles/Cursos
+                        <div class="pull-right">
+                            <a href="#" data-perform="panel-collapse"><i class="ti-plus"></i></a> 
                         </div>
-                    @endif
-
-                    You are logged in!
+                    </div>
+                    <div class="panel-wrapper collapse" aria-expanded="true">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    asdasd
+                                </div>
+                                <div class="col-sm-2">
+                                    cccccc
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="panel panel-inverse">
+                    <div class="panel-heading"> Funcionarios
+                        <div class="pull-right">
+                            <a href="#" data-perform="panel-collapse"><i class="ti-plus"></i></a> 
+                        </div>
+                    </div>
+                    <div class="panel-wrapper collapse" aria-expanded="true">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </div>
-</div>
+
+</div>  
+
 @endsection
