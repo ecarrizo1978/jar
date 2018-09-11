@@ -126,25 +126,18 @@
 
                     <ul class="nav" id="side-menu">
                          
-                        <li> 
-                            <a href="#" class="waves-effect"><i class="mdi mdi-account-card-details fa-fw" data-icon="v"></i> <span class="hide-menu"> Mis Datos <span class="fa arrow"></span> </span></a>
+                         <li> 
+                            <a href="#" class="waves-effect"><i class="mdi mdi-account-card-details fa-fw" data-icon="v"></i> <span class="hide-menu"> Mis Datos <span class="fa arrow"></span> <span class="label label-rouded label-primary pull-right">4</span></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{-- {{ route('persona.edithome',Auth::user()->id_persona) }} --}}"><i class="ti-user"></i> <span class="hide-menu">Mi Información</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><i class="ti-email"></i> <span class="hide-menu">Bandeja de Entrada</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><i class="ti-settings"></i> <span class="hide-menu">Configuración de Cuenta</span></a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('logout') }}"
+                                 
+                                <li><a href="{{-- {{ route('persona.edithome',Auth::user()->id_persona) }} --}}"><i class="ti-user"></i> <span class="hide-menu">Mi Información</span></a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-email"></i> <span class="hide-menu">Bandeja de Entrada</span></a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-settings"></i> <span class="hide-menu">Configuración de Cuenta</span></a></li>
+                               <li><a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> <span class="hide-menu">Cerrar Sesión</span></a><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
-                                    </form>
-                                </li>
+                                    </form></li>
                             </ul>
                         </li>
 
